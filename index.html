@@ -24,18 +24,18 @@
     .bg-svg { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
     .inner { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
     nav { display: flex; justify-content: space-between; align-items: center; padding-bottom: 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2.5rem; }
-    .nav-name { font-family: 'Klee One', cursive; font-size: 18px; font-weight: 600; color: var(--hint); letter-spacing: 0.1em; }
+    .nav-name { font-family: 'Klee One', cursive; font-size: 20px; font-weight: 600; color: var(--hint); letter-spacing: 0.1em; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-size: 11px; color: var(--hint); text-decoration: none; letter-spacing: 0.1em; transition: color 0.15s; }
     .nav-links a:hover { color: var(--ink); }
     .hero { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem; }
     .hero-icon { width: 72px; height: 72px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid var(--border); background: var(--surface); }
     .hero-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .hero-label { font-size: 10px; letter-spacing: 0.14em; color: var(--hint); margin-bottom: 0.3rem; }
+    .hero-label { font-size: 12px; letter-spacing: 0.14em; color: var(--hint); margin-bottom: 0.3rem; }
     .hero-name { font-family: 'Klee One', cursive; font-size: clamp(22px, 4vw, 32px); font-weight: 600; color: var(--ink); line-height: 1.15; }
-    .hero-desc { font-size: 12px; color: var(--muted); line-height: 2; font-weight: 300; margin-top: 0.3rem; }
+    .hero-desc { font-size: 14px; color: var(--muted); line-height: 2; font-weight: 300; margin-top: 0.3rem; }
     .tabs { display: flex; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
-    .tab-btn { font-family: 'Klee One', cursive; font-size: 13px; color: var(--hint); background: none; border: none; cursor: pointer; padding: 0.5rem 1.2rem 0.6rem; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.15s, border-color 0.15s; letter-spacing: 0.06em; }
+    .tab-btn { font-family: 'Klee One', cursive; font-size: 15px; color: var(--hint); background: none; border: none; cursor: pointer; padding: 0.5rem 1.2rem 0.6rem; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.15s, border-color 0.15s; letter-spacing: 0.06em; }
     .tab-btn.on { color: var(--ink); border-bottom-color: var(--hint); }
     .tab-panel { display: none; }
     .tab-panel.on { display: block; }
@@ -50,8 +50,8 @@
     .vcard:hover img { transform: scale(1.05); opacity: 0.65; }
     .vov { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 10px; opacity: 0; transition: opacity 0.25s; background: linear-gradient(to top, rgba(58,46,30,0.75) 0%, transparent 65%); border-radius: 8px; }
     .vcard:hover .vov { opacity: 1; }
-    .vt { font-family: 'Klee One', cursive; font-size: 11px; color: #f0ece2; line-height: 1.4; }
-    .vc { font-size: 10px; color: rgba(240,236,226,0.65); margin-top: 2px; }
+    .vt { font-family: 'Klee One', cursive; font-size: 13px; color: #f0ece2; line-height: 1.4; }
+    .vc { font-size: 11px; color: rgba(240,236,226,0.65); margin-top: 2px; }
     .igrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-bottom: 1rem; }
     @media (max-width: 560px) { .igrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     .icard { aspect-ratio: 1/1; overflow: hidden; cursor: pointer; border-radius: 8px; background: var(--surface); }
@@ -69,7 +69,7 @@
     .cl { font-family: 'Klee One', cursive; font-size: 14px; color: var(--hint); letter-spacing: 0.1em; margin-bottom: 0.75rem; }
     .ce { font-family: 'Klee One', cursive; font-size: clamp(14px, 2.5vw, 19px); color: var(--ink); text-decoration: none; display: block; margin-bottom: 1rem; transition: opacity 0.15s; }
     .ce:hover { opacity: 0.55; }
-    .cn { font-size: 11px; color: var(--hint); line-height: 2.2; font-weight: 300; }
+    .cn { font-size: 13px; color: var(--hint); line-height: 2.2; font-weight: 400; }
     .sx { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--hint); text-decoration: none; margin-top: 1.25rem; transition: color 0.15s; }
     .sx:hover { color: var(--ink); }
     footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 10px; color: var(--hint); letter-spacing: 0.06em; }
