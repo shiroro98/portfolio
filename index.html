@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>shiroro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --ink: #3a2e1e;
+      --muted: #7a6040;
+      --hint: #a68053;
+      --bg: #f0ece2;
+      --surface: #e8e2d4;
+      --border: rgba(140,91,63,0.2);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #e8dfc8;
+        --muted: #b09070;
+        --hint: #8a7055;
+        --bg: #1e1a14;
+        --surface: #2a2419;
+        --border: rgba(166,128,83,0.2);
+      }
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
+    .site { position: relative; overflow: hidden; }
+    .bg-svg { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    .inner { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding-bottom: 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2.5rem; }
+    .nav-name { font-family: 'Klee One', cursive; font-size: 18px; font-weight: 600; color: var(--hint); letter-spacing: 0.1em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 11px; color: var(--hint); text-decoration: none; letter-spacing: 0.1em; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--ink); }
+    .hero { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem; }
+    .hero-icon { width: 72px; height: 72px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid var(--border); background: var(--surface); }
+    .hero-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-label { font-size: 10px; letter-spacing: 0.14em; color: var(--hint); margin-bottom: 0.3rem; }
+    .hero-name { font-family: 'Klee One', cursive; font-size: clamp(22px, 4vw, 32px); font-weight: 600; color: var(--ink); line-height: 1.15; }
+    .hero-desc { font-size: 12px; color: var(--muted); line-height: 2; font-weight: 300; margin-top: 0.3rem; }
+    .tabs { display: flex; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .tab-btn { font-family: 'Klee One', cursive; font-size: 13px; color: var(--hint); background: none; border: none; cursor: pointer; padding: 0.5rem 1.2rem 0.6rem; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.15s, border-color 0.15s; letter-spacing: 0.06em; }
+    .tab-btn.on { color: var(--ink); border-bottom-color: var(--hint); }
+    .tab-panel { display: none; }
+    .tab-panel.on { display: block; }
+    .sh { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .sl { flex: 1; height: 1px; background: var(--border); }
+    .st { font-family: 'Klee One', cursive; font-size: 12px; color: var(--hint); }
+    .sc { font-size: 11px; color: var(--hint); }
+    .vgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-bottom: 1rem; }
+    @media (max-width: 560px) { .vgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .vcard { position: relative; aspect-ratio: 16/9; overflow: hidden; cursor: pointer; border-radius: 8px; background: var(--surface); }
+    .vcard img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s, opacity 0.3s; }
+    .vcard:hover img { transform: scale(1.05); opacity: 0.65; }
+    .vov { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 10px; opacity: 0; transition: opacity 0.25s; background: linear-gradient(to top, rgba(58,46,30,0.75) 0%, transparent 65%); border-radius: 8px; }
+    .vcard:hover .vov { opacity: 1; }
+    .vt { font-family: 'Klee One', cursive; font-size: 11px; color: #f0ece2; line-height: 1.4; }
+    .vc { font-size: 10px; color: rgba(240,236,226,0.65); margin-top: 2px; }
+    .igrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-bottom: 1rem; }
+    @media (max-width: 560px) { .igrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .icard { aspect-ratio: 1/1; overflow: hidden; cursor: pointer; border-radius: 8px; background: var(--surface); }
+    .icard img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s, opacity 0.3s; }
+    .icard:hover img { transform: scale(1.05); opacity: 0.65; }
+    .mlist { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1rem; }
+    .mitem { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: rgba(211,201,184,0.3); border-radius: 10px; border: 1px solid var(--border); cursor: pointer; transition: background 0.15s; }
+    .mitem:hover { background: rgba(211,201,184,0.55); }
+    .mthumb { width: 48px; height: 48px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
+    .minfo { flex: 1; min-width: 0; }
+    .mtitle { font-family: 'Klee One', cursive; font-size: 13px; color: var(--ink); margin-bottom: 2px; }
+    .msub { font-size: 11px; color: var(--muted); }
+    .mrole { font-size: 10px; color: var(--hint); background: rgba(166,128,83,0.15); padding: 2px 8px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+    .cs { border-top: 1px solid var(--border); padding-top: 2.5rem; margin-top: 2rem; }
+    .cl { font-family: 'Klee One', cursive; font-size: 14px; color: var(--hint); letter-spacing: 0.1em; margin-bottom: 0.75rem; }
+    .ce { font-family: 'Klee One', cursive; font-size: clamp(14px, 2.5vw, 19px); color: var(--ink); text-decoration: none; display: block; margin-bottom: 1rem; transition: opacity 0.15s; }
+    .ce:hover { opacity: 0.55; }
+    .cn { font-size: 11px; color: var(--hint); line-height: 2.2; font-weight: 300; }
+    .sx { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--hint); text-decoration: none; margin-top: 1.25rem; transition: color 0.15s; }
+    .sx:hover { color: var(--ink); }
+    footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 10px; color: var(--hint); letter-spacing: 0.06em; }
+  </style>
+</head>
+<body>
+<div class="site">
+  <svg class="bg-svg" viewBox="0 0 900 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="d" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="12" cy="12" r="1" fill="#a68053"/></pattern>
+      <pattern id="g" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+        <line x1="0" y1="24" x2="48" y2="24" stroke="#bcbf50" stroke-width="0.3" opacity="0.3"/>
+        <line x1="24" y1="0" x2="24" y2="48" stroke="#bcbf50" stroke-width="0.3" opacity="0.3"/>
+      </pattern>
+    </defs>
+    <rect width="900" height="800" fill="var(--bg)"/>
+    <rect width="900" height="800" fill="url(#d)" opacity="0.18"/>
+    <rect width="900" height="800" fill="url(#g)"/>
+    <circle cx="820" cy="80" r="140" fill="#bcbf50" opacity="0.06"/>
+    <circle cx="60" cy="650" r="100" fill="#8c5b3f" opacity="0.05"/>
+    <circle cx="460" cy="400" r="250" fill="#d3d9c5" opacity="0.09"/>
+  </svg>
+
+  <div class="inner">
+    <nav>
+      <span class="nav-name">shiroro</span>
+      <ul class="nav-links">
+        <li><a href="#works">works</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-icon"><img id="iconImg" src="" alt="しろろ" /></div>
+      <div>
+        <p class="hero-label">Video Editor / Illustrator / Singer-Songwriter</p>
+        <h1 class="hero-name">しろろ</h1>
+        <p class="hero-desc">動画編集・イラスト・シンガーソングライター</p>
+      </div>
+    </div>
+
+    <div id="works">
+      <div class="tabs">
+        <button class="tab-btn on" data-t="v">動画</button>
+        <button class="tab-btn" data-t="i">イラスト</button>
+        <button class="tab-btn" data-t="m">音楽</button>
+      </div>
+
+      <div class="tab-panel on" id="pv">
+        <div class="sh"><span class="st">Video Works</span><div class="sl"></div><span class="sc" id="vc"></span></div>
+        <div class="vgrid" id="vg"></div>
+      </div>
+
+      <div class="tab-panel" id="pi">
+        <div class="sh"><span class="st">Illustration</span><div class="sl"></div><span class="sc" id="ic"></span></div>
+        <div class="igrid" id="ig"></div>
+      </div>
+
+      <div class="tab-panel" id="pm">
+        <div class="sh"><span class="st">Music</span><div class="sl"></div><span class="sc" id="mc"></span></div>
+        <div class="mlist" id="ml"></div>
+      </div>
+    </div>
+
+    <div class="cs" id="contact">
+      <p class="cl">Contact</p>
+      <a class="ce" href="mailto:4shiroro6@gmail.com">4shiroro6@gmail.com</a>
+      <p class="cn">
+        ※ご依頼の際は、納期・ご予算・概要をご記載ください。<br>
+        ※一週間経っても返信がない場合は、お手数ですが再送をお願いいたします。<br>
+        ※スケジュールによりお受けできない場合がございます。ご了承ください。
+      </p>
+      <a class="sx" href="https://twitter.com/m_shiroro" target="_blank" rel="noopener">𝕏 @m_shiroro</a>
+    </div>
+
+    <footer>© shiroro</footer>
+  </div>
+</div>
+
+<script src="icon.js"></script>
+<script src="works.js"></script>
+<script>
+document.getElementById('iconImg').src = ICON_SRC;
+
+function ytId(u) {
+  const m = u.match(/(?:v=|youtu\.be\/)([^&?/]+)/);
+  return m ? m[1] : null;
+}
+
+const vg = document.getElementById('vg');
+document.getElementById('vc').textContent = videos.length + ' videos';
+videos.forEach(v => {
+  const id = ytId(v.url); if (!id) return;
+  const c = document.createElement('div'); c.className = 'vcard';
+  c.innerHTML = '<img src="https://img.youtube.com/vi/' + id + '/mqdefault.jpg" alt="' + v.title + '" loading="lazy"/><div class="vov"><div class="vt">' + v.title + '</div><div class="vc">' + v.channel + '</div></div>';
+  c.onclick = () => window.open('https://www.youtube.com/watch?v=' + id, '_blank');
+  vg.appendChild(c);
+});
+
+const ig = document.getElementById('ig');
+document.getElementById('ic').textContent = illusts.length + ' works';
+if (illusts.length === 0) {
+  ig.innerHTML = '<p style="font-size:12px;color:var(--hint);grid-column:1/-1;padding:2rem 0;">イラストを追加すると表示されます</p>';
+} else {
+  illusts.forEach(il => {
+    const c = document.createElement('div'); c.className = 'icard';
+    c.innerHTML = '<img src="' + il.url + '" alt="' + il.title + '" loading="lazy"/>';
+    if (il.link) c.onclick = () => window.open(il.link, '_blank');
+    ig.appendChild(c);
+  });
+}
+
+const ml = document.getElementById('ml');
+document.getElementById('mc').textContent = musics.length + ' tracks';
+musics.forEach(m => {
+  const id = ytId(m.url);
+  const th = id ? '<img class="mthumb" src="https://img.youtube.com/vi/' + id + '/mqdefault.jpg" alt="' + m.title + '"/>'
+    : '<div style="width:48px;height:48px;border-radius:6px;background:var(--surface);flex-shrink:0;"></div>';
+  const el = document.createElement('div'); el.className = 'mitem';
+  el.innerHTML = th + '<div class="minfo"><div class="mtitle">' + m.title + '</div><div class="msub">' + m.artist + '</div></div><span class="mrole">' + m.role + '</span>';
+  if (m.url) el.onclick = () => window.open(m.url, '_blank');
+  ml.appendChild(el);
+});
+
+document.querySelectorAll('.tab-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('on'));
+    document.querySelectorAll('.tab-panel').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    document.getElementById('p' + b.dataset.t).classList.add('on');
+  });
+});
+</script>
+</body>
+</html>
