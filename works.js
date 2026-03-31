@@ -1,14 +1,7 @@
-// 動画：YouTubeのURLとタイトルを追加するだけ（新しいものを上に）
 const videos = [
-  // { url: "https://www.youtube.com/watch?v=XXXXXXXXXXX", title: "動画タイトル", channel: "チャンネル名" },
+  { url: "https://youtu.be/g6cxFa9bx3s", title: "【知ってる？】イラストが上達する、強力テクニック5選！！", channel: "" },
 ];
 
-// イラスト：画像のURL（SNSの直リンクなど）を追加
-const illusts = [
-  // { url: "https://...", title: "作品名", link: "https://..." },
-];
+const illusts = [];
 
-// 音楽：関わった楽曲のURL・情報を追加
-const musics = [
-  // { url: "https://www.youtube.com/watch?v=XXXXXXXXXXX", title: "曲タイトル", artist: "アーティスト名", role: "作曲・編曲" },
-];
+const musics = [];
