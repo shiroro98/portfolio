@@ -110,7 +110,7 @@ const illusts = [
   { url: "https://shiroro98.github.io/portfolio/images/2.png" },
   { url: "https://shiroro98.github.io/portfolio/images/TH73.png" },
   { url: "https://shiroro98.github.io/portfolio/images/iconu.png" },
-{ url: "https://shiroro98.github.io/portfolio/images/はぴらま四角.png" },
+{ url: "https://shiroro98.github.io/portfolio/images/はぴらま四角.png" },
 { url: "https://shiroro98.github.io/portfolio/images/集合2x.jpg" },
 ];
 
