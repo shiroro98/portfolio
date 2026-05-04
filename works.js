@@ -114,4 +114,12 @@ const illusts = [
 { url: "https://shiroro98.github.io/portfolio/images/集合2x.jpg" },
 ];
 
-const musics = [];
+const musics = [
+  { url: "https://www.youtube.com/watch?v=TwnUPB8WJ8k", title: "cover" },
+  { url: "https://youtu.be/Soo5WQyT1eY?si=0SH_VfqqQ74l4sjl", title: "colabo" },
+  { url: "https://www.youtube.com/watch?v=QUcZOEmN4LY", title: "オリジナル曲" },
+  { url: "https://youtu.be/WXcy54pcMRQ?si=bN8vd3O7gEK2JI54", title: "vocal" },
+  { url: "https://youtu.be/81c2aCFSYUQ?si=cPscCiLIksS71UEg", title: "vocal" },
+  { url: "https://youtu.be/0WCjM6xa6Mo?si=d0MEfQKBv6LzA0Gk", title: "vocal" },
+  { url: "https://youtu.be/gKTnSAfPDOI?si=SCUAmh9RWPZ9Xfs9", title: "vocal" },
+];
