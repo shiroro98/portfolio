@@ -106,6 +106,8 @@ const videos = [
   { url: "https://www.youtube.com/watch?v=zszzNvzVCrE", title: "プロ絵師が、ブルアカとコラボしたら大変な事になったw", channel: "" },
 ];
 
-const illusts = [];
+const illusts = [
+  https://shiroro98.github.io/portfolio/images/ファイル名.jpg
+];
 
 const musics = [];
