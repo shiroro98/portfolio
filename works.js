@@ -1,4 +1,10 @@
 const videos = [
+  { url: "https://www.youtube.com/watch?v=F-cKq77zLJg", title: "【いいね減少↓】正面顔の絵に逃げてしまいます。改善策は…！？", channel: "" },
+  { url: "https://www.youtube.com/watch?v=m7uuBdjz63c", title: "【イラスト上達】練習しなくても、知らず知らずに上達しちゃう方法…！", channel: "" },
+  { url: "https://www.youtube.com/watch?v=GyNAMn6P_TU", title: "【中3の悩み】絵にリアリティーを感じません。どうすれば…！？", channel: "" },
+  { url: "https://www.youtube.com/watch?v=rJJRZHOH9sg", title: "【垢消し】 ついアカウントを消したくなる癖、どうすればいいですか… ！？", channel: "" },
+  { url: "https://www.youtube.com/watch?v=32y_rsQ-mac", title: "成長の段階でえ『いいね』を気にするの禁止！！", channel: "" },
+  { url: "https://www.youtube.com/watch?v=OlYIjQcbKoI", title: "どうせするなら、前向きな勘違いをしよう。", channel: "" },
   { url: "https://www.youtube.com/watch?v=eUdao0k42h8", title: "【お手上げ！】どこを直せばいい！？自分の絵が好きになれません！！", channel: "" },
   { url: "https://www.youtube.com/watch?v=g6cxFa9bx3s", title: "【知ってる？】イラストが上達する、強力テクニック5選！！", channel: "" },
   { url: "https://www.youtube.com/watch?v=db9JRrWE31I", title: "初心者、中級者、上級者の定義を教えて…！！", channel: "" },
