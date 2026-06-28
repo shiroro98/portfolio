@@ -1,4 +1,5 @@
 const videos = [
+  { url: "https://www.youtube.com/watch?v=eUdao0k42h8", title: "【お手上げ！】どこを直せばいい！？自分の絵が好きになれません！！", channel: "" },
   { url: "https://www.youtube.com/watch?v=g6cxFa9bx3s", title: "【知ってる？】イラストが上達する、強力テクニック5選！！", channel: "" },
   { url: "https://www.youtube.com/watch?v=db9JRrWE31I", title: "初心者、中級者、上級者の定義を教えて…！！", channel: "" },
   { url: "https://www.youtube.com/watch?v=7rZdC8N_I6w", title: "立ち絵を描く時に注意すべきコト...！！", channel: "" },
