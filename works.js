@@ -1,4 +1,6 @@
 const videos = [
+  { url: "https://www.youtube.com/watch?v=S3SJm3CZPY4", title: "絵師が、今後の未来をプロの占い師に占ってもらった結果...！？", channel: "" },
+  { url: "https://www.youtube.com/watch?v=s7uDLrOOirA", title: "【注意】絵が下手な人がやってしまう、5つのNG行動", channel: "" },
   { url: "https://www.youtube.com/watch?v=F-cKq77zLJg", title: "【いいね減少↓】正面顔の絵に逃げてしまいます。改善策は…！？", channel: "" },
   { url: "https://www.youtube.com/watch?v=m7uuBdjz63c", title: "【イラスト上達】練習しなくても、知らず知らずに上達しちゃう方法…！", channel: "" },
   { url: "https://www.youtube.com/watch?v=GyNAMn6P_TU", title: "【中3の悩み】絵にリアリティーを感じません。どうすれば…！？", channel: "" },
