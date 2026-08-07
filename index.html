@@ -128,7 +128,8 @@
 
     <div class="cs" id="contact">
       <p class="cl">Contact</p>
-      <a class="ce" href="mailto:4shiroro6@gmail.com">4shiroro6@gmail.com</a>
+      <!-- アドレス収集ボット対策: HTMLには直接書かず、表示時にJSで組み立てる -->
+      <a class="ce" id="ce" data-u="4shiroro6" data-d="gmail.com" href="#contact">メールアドレスを表示</a>
       <p class="cn">
         ※ご依頼の際は、納期・ご予算・概要をご記載ください。<br>
         ※一週間経っても返信がない場合は、お手数ですが再送をお願いいたします。<br>
@@ -187,6 +188,16 @@ musics.forEach(m => {
   c.onclick = () => window.open(link, '_blank');
   mg.appendChild(c);
 });
+
+// お問い合わせ先のメールアドレスを組み立てる。
+// HTMLには「ユーザー名」と「ドメイン」を分けて持たせてあり、@ もここで作る。
+// HTMLしか読まない収集ボットには文字列として拾えない。
+const ce = document.getElementById('ce');
+if (ce) {
+  const addr = ce.dataset.u + String.fromCharCode(64) + ce.dataset.d;
+  ce.textContent = addr;
+  ce.href = 'mail' + 'to:' + addr;
+}
 
 document.querySelectorAll('.tab-btn').forEach(b => {
   b.addEventListener('click', () => {
