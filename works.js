@@ -135,6 +135,7 @@ const illusts = [
 ];
 
 const musics = [
+  { url: "https://www.instagram.com/reel/DRSJfxQk1f5/", title: "voice", thumb: "https://shiroro98.github.io/portfolio/images/reel-DRSJfxQk1f5.jpg" },
   { url: "https://www.instagram.com/reel/DSXfrhdkTY-/", title: "voice", thumb: "https://shiroro98.github.io/portfolio/images/reel-DSXfrhdkTY-.jpg" },
   { url: "https://www.instagram.com/reel/DY5v0pPBK7f/", title: "colabo", thumb: "https://shiroro98.github.io/portfolio/images/reel-DY5v0pPBK7f.jpg" },
   { url: "https://www.youtube.com/watch?v=TwnUPB8WJ8k", title: "cover" },
