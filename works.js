@@ -135,6 +135,7 @@ const illusts = [
 ];
 
 const musics = [
+  { url: "https://www.instagram.com/reel/DY5v0pPBK7f/", title: "colabo", thumb: "https://shiroro98.github.io/portfolio/images/reel-DY5v0pPBK7f.jpg" },
   { url: "https://www.youtube.com/watch?v=TwnUPB8WJ8k", title: "cover" },
   { url: "https://youtu.be/Soo5WQyT1eY?si=0SH_VfqqQ74l4sjl", title: "colabo" },
   { url: "https://www.youtube.com/watch?v=QUcZOEmN4LY", title: "オリジナル曲" },

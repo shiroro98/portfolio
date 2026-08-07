@@ -177,10 +177,14 @@ if (illusts.length === 0) {
 const mg = document.getElementById('mg');
 document.getElementById('mc').textContent = musics.length + ' tracks';
 musics.forEach(m => {
-  const id = ytId(m.url); if (!id) return;
+  // YouTube はIDからサムネを組み立て、それ以外（Instagram等）は thumb 指定の画像を使う
+  const id = ytId(m.url);
+  const thumb = id ? 'https://img.youtube.com/vi/' + id + '/mqdefault.jpg' : m.thumb;
+  if (!thumb) return;
+  const link = id ? 'https://www.youtube.com/watch?v=' + id : m.url;
   const c = document.createElement('div'); c.className = 'vcard';
-  c.innerHTML = '<img src="https://img.youtube.com/vi/' + id + '/mqdefault.jpg" alt="' + m.title + '" loading="lazy"/><div class="vov"><div class="vt">' + m.title + '</div></div>';
-  c.onclick = () => window.open('https://www.youtube.com/watch?v=' + id, '_blank');
+  c.innerHTML = '<img src="' + thumb + '" alt="' + m.title + '" loading="lazy"/><div class="vov"><div class="vt">' + m.title + '</div></div>';
+  c.onclick = () => window.open(link, '_blank');
   mg.appendChild(c);
 });
 
