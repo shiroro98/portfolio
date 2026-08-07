@@ -1,4 +1,7 @@
 const videos = [
+  { url: "https://www.youtube.com/watch?v=e59E1wE8bec", title: "【イラスト】簡単にかっこいい色を塗る『チート技』教えます。【TourBox新機能】", channel: "" },
+  { url: "https://www.youtube.com/watch?v=rZNEbwmVEQQ", title: "【ブラックさいとうなおき】 絵が楽しくない？当たり前だバカやろう！！", channel: "" },
+  { url: "https://www.youtube.com/watch?v=zpGmZNWGYZU", title: "プロ絵師3人集まれば、商品キービジュアルイラストを3時間で描きあげられる説…！！【マウスコンピューターコラボ】", channel: "" },
   { url: "https://www.youtube.com/watch?v=s7uDLrOOirA", title: "【注意】絵が下手な人がやってしまう、5つのNG行動", channel: "" },
   { url: "https://www.youtube.com/watch?v=S3SJm3CZPY4", title: "絵師が、今後の未来をプロの占い師に占ってもらった結果...！？", channel: "" },
   { url: "https://www.youtube.com/watch?v=OlYIjQcbKoI", title: "どうせするなら、前向きな勘違いをしよう。", channel: "" },
