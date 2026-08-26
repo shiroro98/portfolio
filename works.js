@@ -1,4 +1,6 @@
 const videos = [
+  { url: "https://www.youtube.com/watch?v=CxwP1jc6MPk", title: "【描かずに上達！？】練習してないのに、人より上手くなっちゃう方法とは！？", channel: "" },
+  { url: "https://www.youtube.com/watch?v=jGwAf7nZ47M", title: "【ART OF MIKU】初音ミクのアート制作過程、公開してみた。", channel: "" },
   { url: "https://www.youtube.com/watch?v=e59E1wE8bec", title: "【イラスト】簡単にかっこいい色を塗る『チート技』教えます。【TourBox新機能】", channel: "" },
   { url: "https://www.youtube.com/watch?v=rZNEbwmVEQQ", title: "【ブラックさいとうなおき】 絵が楽しくない？当たり前だバカやろう！！", channel: "" },
   { url: "https://www.youtube.com/watch?v=zpGmZNWGYZU", title: "プロ絵師3人集まれば、商品キービジュアルイラストを3時間で描きあげられる説…！！【マウスコンピューターコラボ】", channel: "" },
