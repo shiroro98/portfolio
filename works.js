@@ -1,4 +1,11 @@
 const videos = [
+  { url: "https://www.youtube.com/watch?v=Ojt15uEuTiE", title: "絵が､めっちゃ上達する人の共通点とは…！？", channel: "" },
+  { url: "https://www.youtube.com/watch?v=fyC-88J1zeg", title: "【原因究明】頑張って描いた絵に『いいね』がつきません！なぜ…！？", channel: "" },
+  { url: "https://www.youtube.com/watch?v=S_iXFEU1SK8", title: "【悩み】仲良しでも、絵が下手な奴との関係性を切ってしまいます。", channel: "" },
+  { url: "https://www.youtube.com/watch?v=qIplOacj5EU", title: "クリエーターの役割は！？【ブラックなおき】", channel: "" },
+  { url: "https://www.youtube.com/watch?v=Y7_7GCySD1M", title: "【NG習慣】コレやってると、絵が描けなくなります。", channel: "" },
+  { url: "https://www.youtube.com/watch?v=ASRbXbbLXfM", title: "上手くなると消えがちな『絵の良さ』について。", channel: "" },
+  { url: "https://www.youtube.com/watch?v=PL7jKd8bSF0", title: "絵が下手に見える！よくある失敗例   ！！", channel: "" },
   { url: "https://www.youtube.com/watch?v=CxwP1jc6MPk", title: "【描かずに上達！？】練習してないのに、人より上手くなっちゃう方法とは！？", channel: "" },
   { url: "https://www.youtube.com/watch?v=jGwAf7nZ47M", title: "【ART OF MIKU】初音ミクのアート制作過程、公開してみた。", channel: "" },
   { url: "https://www.youtube.com/watch?v=zpGmZNWGYZU", title: "プロ絵師3人集まれば、商品キービジュアルイラストを3時間で描きあげられる説…！！【マウスコンピューターコラボ】", channel: "" },
