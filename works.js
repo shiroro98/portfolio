@@ -1,4 +1,5 @@
 const videos = [
+  { url: "https://www.youtube.com/watch?v=eEM7hM6f7Ho", title: "【おすすめ】イラスト上達のための本 5選", channel: "" },
   { url: "https://www.youtube.com/watch?v=Ojt15uEuTiE", title: "絵が､めっちゃ上達する人の共通点とは…！？", channel: "" },
   { url: "https://www.youtube.com/watch?v=fyC-88J1zeg", title: "【原因究明】頑張って描いた絵に『いいね』がつきません！なぜ…！？", channel: "" },
   { url: "https://www.youtube.com/watch?v=S_iXFEU1SK8", title: "【悩み】仲良しでも、絵が下手な奴との関係性を切ってしまいます。", channel: "" },
