@@ -1,4 +1,5 @@
 const videos = [
+  { url: "https://www.youtube.com/watch?v=UemH943t4cc", title: "プロのデジタル作画環境、公開します【2026年版】", channel: "" },
   { url: "https://www.youtube.com/watch?v=eEM7hM6f7Ho", title: "【おすすめ】イラスト上達のための本 5選", channel: "" },
   { url: "https://www.youtube.com/watch?v=Ojt15uEuTiE", title: "絵が､めっちゃ上達する人の共通点とは…！？", channel: "" },
   { url: "https://www.youtube.com/watch?v=fyC-88J1zeg", title: "【原因究明】頑張って描いた絵に『いいね』がつきません！なぜ…！？", channel: "" },
